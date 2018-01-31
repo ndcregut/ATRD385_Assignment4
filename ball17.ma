@@ -1,6 +1,6 @@
 //Maya ASCII 2017ff05 scene
 //Name: ball17.ma
-//Last modified: Wed, Jan 31, 2018 11:41:28 AM
+//Last modified: Wed, Jan 31, 2018 11:48:49 AM
 //Codeset: 1252
 requires maya "2017ff05";
 requires "stereoCamera" "10.0";
@@ -15,13 +15,13 @@ fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "D4FE673C-4F16-3D6F-7197-C181763C83F0";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -2173.6704406137978 349.3775294451309 258.11461823307684 ;
-	setAttr ".r" -type "double3" -2.7052663844128748 624.1999999998618 0 ;
+	setAttr ".t" -type "double3" -1469.4116099843091 450.04528301848018 -457.07773721859303 ;
+	setAttr ".r" -type "double3" -6.9052663845139843 604.1999999998277 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "C745DD37-48EB-F52C-C6E7-6A84DA4E507D";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 2133.4103695373037;
+	setAttr ".coi" 1812.0458405892225;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -122,7 +122,7 @@ createNode transform -n "ball_bodyOrient" -p "ball_baseConstraints";
 	setAttr -l on -k off ".tx";
 	setAttr -l on -k off ".ty";
 	setAttr -l on -k off ".tz";
-	setAttr ".r" -type "double3" 799.77476263870767 -19.76204782169442 -10.893321120371848 ;
+	setAttr ".r" -type "double3" 831.82023374846324 -19.76204782169442 -10.893321120371848 ;
 	setAttr -l on -k off ".sx";
 	setAttr -l on -k off ".sy";
 	setAttr -l on -k off ".sz";
@@ -2231,6 +2231,52 @@ createNode scaleConstraint -n "ball_cogConstraints_scaleConstraint1" -p "ball_co
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
+createNode transform -n "pPlane1";
+	rename -uid "1228D0AC-4018-9E80-C95D-42BD56405153";
+	setAttr ".s" -type "double3" 475.94331629324893 475.94331629324893 475.94331629324893 ;
+createNode mesh -n "pPlaneShape1" -p "pPlane1";
+	rename -uid "4E5EFEC5-4A3C-3413-59FF-CD808D746D4C";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 121 ".pt[0:120]" -type "float3"  -0.33878177 0 1.7345448 -0.27102542 
+		0 1.7345448 -0.20326896 0 1.7345448 -0.13551269 0 1.7345448 -0.067756347 0 1.7345448 
+		0 0 1.7345448 0.06775637 0 1.7345448 0.13551269 0 1.7345448 0.20326896 0 1.7345448 
+		0.27102545 0 1.7345448 0.33878177 0 1.7345448 -0.33878177 0 1.3876358 -0.27102542 
+		0 1.3876358 -0.20326896 0 1.3876358 -0.13551269 0 1.3876358 -0.067756347 0 1.3876358 
+		0 0 1.3876358 0.06775637 0 1.3876358 0.13551269 0 1.3876358 0.20326896 0 1.3876358 
+		0.27102545 0 1.3876358 0.33878177 0 1.3876358 -0.33878177 0 1.040727 -0.27102542 
+		0 1.040727 -0.20326896 0 1.040727 -0.13551269 0 1.040727 -0.067756347 0 1.040727 
+		0 0 1.040727 0.06775637 0 1.040727 0.13551269 0 1.040727 0.20326896 0 1.040727 0.27102545 
+		0 1.040727 0.33878177 0 1.040727 -0.33878177 0 0.69381785 -0.27102542 0 0.69381785 
+		-0.20326896 0 0.69381785 -0.13551269 0 0.69381785 -0.067756347 0 0.69381785 0 0 0.69381785 
+		0.06775637 0 0.69381785 0.13551269 0 0.69381785 0.20326896 0 0.69381785 0.27102545 
+		0 0.69381785 0.33878177 0 0.69381785 -0.33878177 0 0.34690893 -0.27102542 0 0.34690893 
+		-0.20326896 0 0.34690893 -0.13551269 0 0.34690893 -0.067756347 0 0.34690893 0 0 0.34690893 
+		0.06775637 0 0.34690893 0.13551269 0 0.34690893 0.20326896 0 0.34690893 0.27102545 
+		0 0.34690893 0.33878177 0 0.34690893 -0.33878177 0 0 -0.27102542 0 0 -0.20326896 
+		0 0 -0.13551269 0 0 -0.067756347 0 0 0 0 0 0.06775637 0 0 0.13551269 0 0 0.20326896 
+		0 0 0.27102545 0 0 0.33878177 0 0 -0.33878177 0 -0.34690908 -0.27102542 0 -0.34690908 
+		-0.20326896 0 -0.34690908 -0.13551269 0 -0.34690908 -0.067756347 0 -0.34690908 0 
+		0 -0.34690908 0.06775637 0 -0.34690908 0.13551269 0 -0.34690908 0.20326896 0 -0.34690908 
+		0.27102545 0 -0.34690908 0.33878177 0 -0.34690908 -0.33878177 0 -0.69381785 -0.27102542 
+		0 -0.69381785 -0.20326896 0 -0.69381785 -0.13551269 0 -0.69381785 -0.067756347 0 
+		-0.69381785 0 0 -0.69381785 0.06775637 0 -0.69381785 0.13551269 0 -0.69381785 0.20326896 
+		0 -0.69381785 0.27102545 0 -0.69381785 0.33878177 0 -0.69381785 -0.33878177 0 -1.040727 
+		-0.27102542 0 -1.040727 -0.20326896 0 -1.040727 -0.13551269 0 -1.040727 -0.067756347 
+		0 -1.040727 0 0 -1.040727 0.06775637 0 -1.040727 0.13551269 0 -1.040727 0.20326896 
+		0 -1.040727 0.27102545 0 -1.040727 0.33878177 0 -1.040727 -0.33878177 0 -1.3876358 
+		-0.27102542 0 -1.3876358 -0.20326896 0 -1.3876358 -0.13551269 0 -1.3876358 -0.067756347 
+		0 -1.3876358 0 0 -1.3876358 0.06775637 0 -1.3876358 0.13551269 0 -1.3876358 0.20326896 
+		0 -1.3876358 0.27102545 0 -1.3876358 0.33878177 0 -1.3876358 -0.33878177 0 -1.7345448 
+		-0.27102542 0 -1.7345448 -0.20326896 0 -1.7345448 -0.13551269 0 -1.7345448 -0.067756347 
+		0 -1.7345448 0 0 -1.7345448 0.06775637 0 -1.7345448 0.13551269 0 -1.7345448 0.20326896 
+		0 -1.7345448 0.27102545 0 -1.7345448 0.33878177 0 -1.7345448;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "91B76AAB-460F-B33F-0DF8-A2B093BAC856";
 	setAttr -s 4 ".lnk";
@@ -2610,9 +2656,12 @@ createNode animCurveTL -n "ball_squish_translateY";
 		5.6690240655011781 0 0 0 -27.543468911200762 9.4707826673984528 4.1089832923298255 
 		0 0 0 -15.987376380711794 6.8641451597213745 0 -4.6050594225525856 4.6050594337284565 
 		0 -2.2590857595205307 2.1721978671848774 -1.5639824531972408 1.5639824643731117 0;
+createNode polyPlane -n "polyPlane1";
+	rename -uid "D7FD4422-4EC7-D8D8-E509-83813C98CD9F";
+	setAttr ".cuv" 2;
 select -ne :time1;
-	setAttr ".o" 51;
-	setAttr ".unw" 51;
+	setAttr ".o" 60;
+	setAttr ".unw" 60;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -2810,6 +2859,7 @@ connectAttr "ball_base.s" "ball_cogConstraints_scaleConstraint1.tg[0].ts";
 connectAttr "ball_base.pm" "ball_cogConstraints_scaleConstraint1.tg[0].tpm";
 connectAttr "ball_cogConstraints_scaleConstraint1.w0" "ball_cogConstraints_scaleConstraint1.tg[0].tw"
 		;
+connectAttr "polyPlane1.out" "pPlaneShape1.i";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "Sphere02SG1.message" ":defaultLightSet.message";
@@ -2963,5 +3013,6 @@ connectAttr "ballPhongMaterial.msg" ":defaultShaderList1.s" -na;
 connectAttr "ball_bodyHeightMultDivideUtil.msg" ":defaultRenderUtilityList1.u" -na
 		;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
+connectAttr "pPlaneShape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "ball_bodyHeightMultDivideUtil.o" ":internal_standInShader.ic";
 // End of ball17.ma
